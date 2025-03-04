@@ -33,7 +33,8 @@ T* Pool<T>::Request(Args&&... args) {
 
 template <typename T>
 void Pool<T>::Recycle(T* object) {
-  object->~T();
+  if constexpr (!std::is_trivially_destructible_v<T>)
+    object->~T();
   freeAdresses.push_back(object);
 }
 
