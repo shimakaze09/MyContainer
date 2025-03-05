@@ -5,19 +5,19 @@ MESSAGE(STATUS "Project: ${PROJECT_NAME} ${PROJECT_VERSION}")
 
 INCLUDE(FETCHCONTENT)
 
-MESSAGE(STATUS "Looking for: MyCMake 0.5.2")
-FIND_PACKAGE(MyCMake 0.5.2 QUIET)
+MESSAGE(STATUS "Looking for: MyCMake 0.5.3")
+FIND_PACKAGE(MyCMake 0.5.3 QUIET)
 IF (NOT MyCMake_FOUND)
     SET(ADDRESS "https://github.com/shimakaze09/MyCMake.git")
-    MESSAGE(STATUS "MyCMake 0.5.2 not found\n")
-    MESSAGE(STATUS "Fetching from ${ADDRESS} with tag 0.5.2")
+    MESSAGE(STATUS "MyCMake 0.5.3 not found\n")
+    MESSAGE(STATUS "Fetching from ${ADDRESS} with tag 0.5.3")
     FETCHCONTENT_DECLARE(
             MyCMake
             GIT_REPOSITORY ${ADDRESS}
-            GIT_TAG "0.5.2"
+            GIT_TAG "0.5.3"
     )
     FETCHCONTENT_MAKEAVAILABLE(MyCMake)
-    MESSAGE(STATUS "MyCMake 0.5.2 built")
+    MESSAGE(STATUS "MyCMake 0.5.3 built")
 ENDIF ()
 
 INIT_PROJECT()
