@@ -1,4 +1,7 @@
 ADD_TARGET(
-        MODE HEAD
-        INC include
+        MODE STATIC
+        SOURCE
+        "${PROJECT_SOURCE_DIR}/include/MyContainer"
+        INC
+        "include"
 )
