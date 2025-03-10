@@ -3,5 +3,5 @@ ADD_TARGET(
         SOURCE
         "${PROJECT_SOURCE_DIR}/include/MyContainer"
         INC
-        "include"
+        "${PROJECT_SOURCE_DIR}/include"
 )
