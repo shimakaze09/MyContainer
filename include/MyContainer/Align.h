@@ -10,7 +10,7 @@
 
 namespace My {
 template <typename T>
-bool IsPowerOfTwo(T val) {
+constexpr bool IsPowerOfTwo(T val) noexcept {
   if constexpr (std::is_unsigned_v<T>)
     return (val & (val - 1)) == 0;
   else
@@ -18,7 +18,7 @@ bool IsPowerOfTwo(T val) {
 }
 
 template <typename T>
-T Align(T val, T alignment) {
+constexpr T Align(T val, T alignment) noexcept {
   assert(IsPowerOfTwo(alignment));
   //    ceil(val \div alignment)
   // == (val + alignment - 1) / alignment
@@ -27,7 +27,7 @@ T Align(T val, T alignment) {
 }
 
 template <typename T>
-T AlignDown(T val, T alignment) {
+constexpr T AlignDown(T val, T alignment) noexcept {
   assert(IsPowerOfTwo(alignment));
   //    floor(val \div alignment)
   // == val / alignment

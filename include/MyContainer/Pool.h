@@ -9,7 +9,7 @@
 #include <vector>
 
 namespace My {
-template <typename T>
+template <typename T, size_t BLOCK_SIZE = 1024>
 class Pool {
  public:
   Pool() = default;
@@ -29,10 +29,9 @@ class Pool {
   void NewBlock();
 
  private:
-  static const size_t BLOCK_SIZE = 1024;
   std::vector<T*> blocks;
   std::vector<T*> freeAdresses;
 };
 }  // namespace My
 
-#include "detail/Pool.inl"
+#include "details/Pool.inl"

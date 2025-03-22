@@ -19,4 +19,4 @@ template <typename Container>
 Container SetSymmetricDifference(const Container& x, const Container& y);
 }  // namespace My
 
-#include "detail/Algorithm.inl"
+#include "details/Algorithm.inl"
